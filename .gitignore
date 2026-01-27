@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env310
+env/
+env310/
+
+# Streamlit
+.streamlit/
+
+# Data pesada
+data/raw/
+data/jsonl/
+data/tmp/
+
+# OS
+.DS_Store
