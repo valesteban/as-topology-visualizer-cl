@@ -7,6 +7,7 @@ __pycache__/
 .env310
 env/
 env310/
+venv/
 
 # Streamlit
 .streamlit/
