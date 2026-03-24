@@ -7,7 +7,7 @@ source venv/bin/activate
 echo "✅ Entorno virtual activado"
 echo ""
 echo "Para ejecutar la aplicación, usa:"
-echo "  streamlit run app/app.py"
+echo "  streamlit run app/app_academic.py"
 echo ""
 echo "Para desactivar el entorno, usa:"
 echo "  deactivate"

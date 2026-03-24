@@ -12,6 +12,9 @@ import matplotlib.pyplot as plt
 from matplotlib_venn import venn2, venn3
 import io
 import base64
+import dgl
+import networkx as nx
+from pyvis.network import Network
 
 
 # Paleta de colores académica consistente
@@ -23,6 +26,159 @@ COLORS = {
     "Exclusive BGP": "#6A8EAE",  # Azul claro
     "Exclusive RIPE": "#C17C9F", # Púrpura claro
 }
+
+
+def _select_top_nodes_by_degree(g, max_nodes=300):
+    """Selecciona los nodos con mayor grado total para submuestrear grafos grandes."""
+    num_nodes = g.num_nodes()
+    if max_nodes is None or max_nodes >= num_nodes:
+        return list(range(num_nodes))
+
+    degrees = (g.in_degrees() + g.out_degrees()).numpy()
+    top_indices = np.argsort(degrees)[-max_nodes:]
+    return top_indices.tolist()
+
+
+def build_pyvis_network(
+    g,
+    node_metadata=None,
+    title="AS Topology",
+    max_nodes=300,
+    max_edges=2000,
+    height="650px",
+    width="100%",
+    seed=42,
+):
+    """
+    Genera un grafo interactivo con PyVis para exploración rápida.
+
+    Retorna:
+        html (str): HTML embebible para Streamlit.
+    """
+    node_metadata = node_metadata or {}
+    name_map = node_metadata.get("name", {})
+
+    selected_nodes = _select_top_nodes_by_degree(g, max_nodes=max_nodes)
+    g_sub = dgl.node_subgraph(g, selected_nodes)
+
+    src, dst = g_sub.edges()
+    edge_list = list(zip(src.tolist(), dst.tolist()))
+
+    if max_edges is not None and len(edge_list) > max_edges:
+        rng = np.random.default_rng(seed)
+        edge_indices = rng.choice(len(edge_list), size=max_edges, replace=False)
+        edge_list = [edge_list[i] for i in edge_indices]
+
+    degrees = (g_sub.in_degrees() + g_sub.out_degrees()).numpy()
+    asn_values = g_sub.ndata.get("asn")
+
+    net = Network(height=height, width=width, bgcolor="#ffffff", font_color="#1f2937")
+    net.force_atlas_2based(gravity=-50, spring_length=100, spring_strength=0.08, damping=0.4)
+
+    for node_id in range(g_sub.num_nodes()):
+        asn = int(asn_values[node_id]) if asn_values is not None else int(node_id)
+        label = f"AS{asn}"
+        tooltip_name = name_map.get(int(selected_nodes[node_id]), "")
+        title_text = f"{label}<br>{tooltip_name}" if tooltip_name else label
+        size = max(6, min(30, int(degrees[node_id]) + 4))
+
+        net.add_node(
+            node_id,
+            label=label,
+            title=title_text,
+            size=size,
+            color="#3b82f6" if degrees[node_id] > 5 else "#93c5fd",
+        )
+
+    for src_id, dst_id in edge_list:
+        net.add_edge(src_id, dst_id)
+
+    net.set_options("""
+    var options = {
+      "nodes": {
+        "borderWidth": 1,
+        "borderWidthSelected": 2
+      },
+      "edges": {
+        "color": {"inherit": true},
+        "smooth": {"type": "dynamic"}
+      },
+      "physics": {
+        "stabilization": {"iterations": 200}
+      }
+    }
+    """)
+
+    html = net.generate_html(notebook=False)
+    return html
+
+
+def plot_k_core_profile(g, max_nodes=2000, title="Perfil de K-Core"):
+    """Distribución de tamaños de k-cores para explorar estructura núcleo-periferia."""
+    selected_nodes = _select_top_nodes_by_degree(g, max_nodes=max_nodes)
+    g_sub = dgl.node_subgraph(g, selected_nodes)
+
+    nx_graph = dgl.to_networkx(g_sub).to_undirected()
+    if nx_graph.number_of_nodes() == 0:
+        return go.Figure()
+
+    core_numbers = nx.core_number(nx_graph)
+    core_counts = pd.Series(core_numbers).value_counts().sort_index()
+
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=core_counts.index.astype(int),
+        y=core_counts.values,
+        marker_color="#0ea5e9",
+    ))
+
+    fig.update_layout(
+        title=dict(text=title, x=0.5, xanchor="center"),
+        xaxis_title="k-core",
+        yaxis_title="Número de ASNs",
+        plot_bgcolor="white",
+        yaxis=dict(gridcolor="lightgray"),
+    )
+    return fig
+
+
+def plot_neighbor_degree_correlation(
+    g,
+    max_nodes=2000,
+    title="Grado vs Grado Promedio de Vecinos",
+):
+    """Scatter del grado vs grado promedio de vecinos para estudiar interconexión."""
+    selected_nodes = _select_top_nodes_by_degree(g, max_nodes=max_nodes)
+    g_sub = dgl.node_subgraph(g, selected_nodes)
+    nx_graph = dgl.to_networkx(g_sub).to_undirected()
+
+    if nx_graph.number_of_nodes() == 0:
+        return go.Figure()
+
+    degree_dict = dict(nx_graph.degree())
+    neighbor_degree = nx.average_neighbor_degree(nx_graph)
+
+    degrees = [degree_dict[n] for n in nx_graph.nodes()]
+    neighbor_avg = [neighbor_degree[n] for n in nx_graph.nodes()]
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=degrees,
+        y=neighbor_avg,
+        mode="markers",
+        marker=dict(size=7, color="#f97316", opacity=0.7),
+        text=[f"Nodo {n}" for n in nx_graph.nodes()],
+    ))
+
+    fig.update_layout(
+        title=dict(text=title, x=0.5, xanchor="center"),
+        xaxis_title="Grado del ASN",
+        yaxis_title="Grado promedio de vecinos",
+        plot_bgcolor="white",
+        xaxis=dict(gridcolor="lightgray"),
+        yaxis=dict(gridcolor="lightgray"),
+    )
+    return fig
 
 
 def plot_degree_distribution_loglog(g, title="Degree Distribution", color=COLORS["BGP"]):

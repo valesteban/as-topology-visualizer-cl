@@ -1,0 +1,128 @@
+node_id,asn,path_occurrences,in_degree,out_degree,name,org_id,info_traffic,info_ratio,info_scope,info_type,info_prefixes4,info_prefixes6,info_unicast,info_multicast,info_ipv6,ix_count,fac_count,policy_url,policy_general,policy_locations,policy_ratio,policy_contracts
+0,174,9,4,4,"Cogent Communications, Inc.",365,100+Tbps,,Global,NSP,700000,150000,True,False,True,0,815,,No,Not Required,False,Not Required
+1,271,1,0,1,BCNET,2179,50-100Gbps,Balanced,North America,Educational/Research,300,100,True,False,True,1,3,http://www.bc.net,Open,Not Required,False,Not Required
+2,812,1,0,1,Rogers Cable,423,1-5Tbps,Mostly Inbound,Regional,Cable/DSL/ISP,3000,1000,True,False,True,4,7,,Selective,Preferred,False,Required
+3,852,1,0,1,TELUS Communications,97,5-10Tbps,Mostly Inbound,North America,NSP,2500,250,True,False,True,7,7,,Selective,Required - US,False,Not Required
+4,1299,6,2,2,Arelion (Twelve99),28858,100+Tbps,Balanced,Global,NSP,0,0,True,False,True,0,275,https://www.arelion.com/dam/jcr:58bcf8cb-7cd2-4108-a5d9-e65bc2a01bb5/Arelion%20%20Peering%20Policy%20Clean%20(12.22.pdf,Restrictive,Required - International,True,Required
+5,1403,1,0,1,EBOX,10432,500-1000Gbps,Heavy Inbound,North America,Cable/DSL/ISP,2500,250,True,False,True,2,5,https://peering.as1403.net,Selective,Preferred,False,Not Required
+6,2152,1,0,1,CENIC / CalREN AS2152,448,1-5Tbps,Heavy Inbound,Regional,Educational/Research,2500,500,True,True,True,8,6,https://cenic.org/network/policies/cenic-peering-policy,Selective,Preferred,False,Not Required
+7,2914,7,2,3,NTT Global IP Network,1271,,Balanced,Global,NSP,426000,100000,True,False,True,13,83,,Restrictive,Required - International,True,Required
+8,3356,66,11,8,Lumen AS3356,682,100+Tbps,Balanced,Global,NSP,600000,150000,True,True,True,3,0,https://www.lumen.com/peering/,Restrictive,Required - International,False,Required
+9,3549,55,9,11,Lumen AS 3549,682,10-20Tbps,Balanced,South America,NSP,0,0,True,False,True,0,3,,Restrictive,Required - International,False,Required
+10,4755,2,1,1,Tata Communications AS4755,581,1-5Tbps,Not Disclosed,Asia Pacific,NSP,35000,10000,True,False,True,4,8,,Restrictive,Not Required,False,Private Only
+11,4777,1,1,0,APNIC NSPIXP2,2470,100-1000Mbps,Mostly Outbound,Regional,Non-Profit,10,10,True,False,True,3,2,,Open,Not Required,False,Required
+12,6429,95,18,16,CLARO CHILE AS6429,25911,,Not Disclosed,Not Disclosed,,0,0,False,False,False,0,0,,,,False,
+13,6453,7,2,3,TATA Communications Ltd,581,20-50Tbps,Balanced,Global,NSP,500000,160000,True,True,True,0,94,,Restrictive,Required - International,True,Required
+14,6535,26,2,4,Telmex Servicios Empresariales AS6535,25911,,Not Disclosed,Not Disclosed,,0,0,False,False,False,0,0,,Open,Not Required,False,Not Required
+15,6762,17,1,2,Telecom Italia Sparkle,78,10-20Tbps,Balanced,Global,NSP,350000,60000,True,False,True,12,83,,Restrictive,Required - International,True,Required
+16,6939,56,27,2,Hurricane Electric,396,100+Tbps,Balanced,Global,NSP,210000,180000,True,False,True,327,337,http://he.net/peering.html,Open,Preferred,False,Not Required
+17,7004,132,10,15,CTC Transmisiones Regionales S.A.,15675,5-10Tbps,Heavy Outbound,Regional,NSP,180000,80000,True,False,True,1,0,,Open,Preferred,False,Private Only
+18,7049,17,0,10,Silica Networks,9828,500-1000Gbps,Mostly Inbound,South America,NSP,3000,2000,True,False,True,9,39,,Open,Not Required,False,Private Only
+19,7195,27,5,5,EdgeUno,22065,20-50Tbps,Mostly Outbound,Global,NSP,30000,12000,True,False,True,24,58,https://edgeuno.com/bgp/,Selective,Preferred,True,Private Only
+20,7418,95,2,11,Movistar ISP,15675,5-10Tbps,Heavy Inbound,South America,Cable/DSL/ISP,500,5,True,False,True,1,0,,Selective,Preferred,False,Not Required
+21,8881,1,0,1,1&1 Versatel Deutschland,5526,5-10Tbps,Mostly Inbound,Europe,Cable/DSL/ISP,2500,500,True,False,True,9,12,http://www.1und1.net/peering-policy,Selective,Required - EU,False,Not Required
+22,9304,2,1,1,HGC,7631,500-1000Gbps,Balanced,Global,NSP,45000,4500,True,False,True,25,12,,Selective,Not Required,True,Not Required
+23,9821,1,0,1,PREGINET,1509,5-10Gbps,Mostly Inbound,Asia Pacific,Educational/Research,5,1,True,False,True,1,0,,Open,Not Required,False,Required
+24,10753,1,1,0,,,,,,,,,,,,,,,,,,
+25,11340,11,2,2,Red Universitaria Nacional,17402,,Not Disclosed,Not Disclosed,,250,120,True,True,True,1,0,,Open,Not Required,False,Not Required
+26,12297,1,0,1,TELECOM ARMENIA,28052,,Mostly Inbound,Europe,NSP,11000,500,True,False,True,8,3,,Open,Not Required,False,Not Required
+27,12322,1,0,1,Free SAS,164,20-50Tbps,Heavy Inbound,Europe,Cable/DSL/ISP,500,500,True,False,True,5,18,,Selective,Preferred,True,Not Required
+28,12956,82,6,11,Telxius Cable,852,,Not Disclosed,Global,Cable/DSL/ISP,100000,30000,False,False,False,9,71,http://telxius.com,Selective,Preferred,True,Required
+29,13335,67,30,0,Cloudflare,4715,,Mostly Outbound,Global,Content,80000,30000,True,False,True,348,221,https://www.cloudflare.com/peering-policy/,Open,Preferred,False,Not Required
+30,14117,9,0,1,Telefonica del Sur,1046,50-100Gbps,Balanced,South America,Cable/DSL/ISP,27,1,True,False,True,0,1,http://as14117.peeringdb.com,Selective,Not Required,False,Not Required
+31,14259,312,24,18,GTD Chile,1046,500-1000Gbps,Mostly Inbound,South America,Cable/DSL/ISP,2000,1000,True,False,True,2,5,http://as14259.peeringdb.com,Selective,Not Required,True,Not Required
+32,14593,29,3,7,SpaceX Starlink,21843,,Mostly Inbound,Global,Cable/DSL/ISP,5000,5000,True,False,True,67,49,,Open,Not Required,False,Not Required
+33,15208,130,13,5,,,,,,,,,,,,,,,,,,
+34,15366,1,0,1,DNS:NET Internet Service,1348,,Mostly Inbound,Regional,NSP,100,50,True,False,True,5,9,,Selective,Not Required,False,Not Required
+35,16276,2,1,1,OVHcloud,1433,10-20Tbps,Heavy Outbound,Global,Content,5000,1000,True,False,True,75,46,https://peering.ovh.net,Open,Preferred,False,Not Required
+36,16509,1,0,1,Amazon.com,1520,,Balanced,Global,Enterprise,16000,8000,True,False,True,155,186,https://aws.amazon.com/peering/policy,Selective,Preferred,False,Not Required
+37,16629,1,1,0,CTCCORP,26041,100-200Gbps,Not Disclosed,Not Disclosed,Cable/DSL/ISP,1000,1000,True,False,True,0,0,,Open,Not Required,False,Not Required
+38,18747,36,8,5,IFX,13788,50-100Gbps,Heavy Inbound,Global,Enterprise,1000,500,True,False,True,4,8,,Selective,Required - International,False,Private Only
+39,18822,27,1,2,Gtd Manquehue,1046,50-100Gbps,Balanced,South America,Cable/DSL/ISP,16,1,True,False,True,0,1,http://as18822.peeringdb.com,Selective,Not Required,False,Not Required
+40,19551,1,1,0,Thales/Imperva,9735,1-5Tbps,Mostly Outbound,Global,Content,4000,4000,True,False,True,77,61,,Open,Preferred,False,Not Required
+41,20015,20,1,5,Netline,14514,,Not Disclosed,Not Disclosed,Cable/DSL/ISP,80,1,False,False,False,1,0,,Selective,Not Required,False,Not Required
+42,20191,7,1,5,Pontificia Universidad Catolica de Chile,17613,5-10Gbps,Balanced,South America,Educational/Research,256,65536,True,False,True,1,1,,Selective,Not Required,False,Not Required
+43,20539,1,1,0,TCRS-AS,38593,5-10Gbps,Not Disclosed,Not Disclosed,Network Services,26,1,True,False,True,1,0,,Open,Not Required,False,Not Required
+44,20810,1,0,1,Netcom Kassel,6531,,Mostly Inbound,Regional,Cable/DSL/ISP,100,50,True,False,True,1,2,,Open,Not Required,False,Not Required
+45,20811,2,1,1,Brennercom,4007,20-50Gbps,Mostly Inbound,Europe,NSP,200,100,True,False,True,3,4,,Selective,Not Required,False,Not Required
+46,21013,1,0,1,eww ag / ITandTEL,10541,50-100Gbps,Mostly Inbound,Europe,NSP,400,50,True,False,True,9,13,,Open,Not Required,False,Not Required
+47,21299,1,0,1,Beeline Kazakhstan,28012,1-5Tbps,Mostly Inbound,Global,NSP,2000,2000,True,True,True,0,0,,Open,Preferred,False,Private Only
+48,22047,15,0,11,VTR Global COM S.A.,10425,100-200Gbps,Mostly Inbound,South America,Cable/DSL/ISP,600,200,True,False,True,0,0,,Restrictive,Not Required,False,Not Required
+49,22548,4,1,1,NIC.BR,1245,1-5Gbps,Balanced,Regional,Non-Profit,50,30,True,False,True,2,0,,Open,Not Required,False,Not Required
+50,26610,1,1,0,Universidad Tecnica Federico Santa Maria,17092,1-5Gbps,Not Disclosed,South America,Educational/Research,20,32,True,True,True,1,0,http://www.usm.cl,Selective,Not Required,False,Required
+51,27651,21,2,9,entel MPLS,19802,,Not Disclosed,Not Disclosed,Cable/DSL/ISP,0,0,True,False,True,0,2,,Restrictive,Not Required,False,Not Required
+52,27677,1,1,0,,,,,,,,,,,,,,,,,,
+53,27678,8,0,4,NIC Chile,16353,,Not Disclosed,Not Disclosed,Educational/Research,0,0,True,False,True,0,0,,Restrictive,Not Required,False,Not Required
+54,27874,1,1,0,,,,,,,,,,,,,,,,,,
+55,27897,1,1,0,,,,,,,,,,,,,,,,,,
+56,27952,1,1,0,,,,,,,,,,,,,,,,,,
+57,28120,6,0,5,,,,,,,,,,,,,,,,,,
+58,31898,26,2,11,Oracle Cloud Infrastructure,16095,,,Global,Content,2000,500,True,False,True,33,51,,Open,Not Required,False,Not Required
+59,35263,1,0,1,RLAN,25128,,Not Disclosed,Not Disclosed,,0,0,False,False,False,1,0,,Open,Not Required,False,Not Required
+60,36236,8,1,6,NetActuate,6738,100+Tbps,Mostly Outbound,Global,Cable/DSL/ISP,1000,500,True,False,True,53,44,https://www.netactuate.com/peering,Open,Not Required,False,Not Required
+61,36351,36,12,1,"SoftLayer Technologies, Inc. (an IBM Company)",8076,1-5Tbps,Mostly Outbound,North America,Content,1800,450,True,False,True,52,40,https://cloud.ibm.com/docs/overview?topic=overview-public-peering,Selective,Preferred,False,Not Required
+62,41206,1,0,1,United Telecom Zrt.,20032,,Not Disclosed,Not Disclosed,,300,30,True,False,True,1,2,,Open,Not Required,False,Not Required
+63,42473,6,0,5,Anexia,8155,,Balanced,Global,Content,1000,500,True,False,True,56,88,https://peering.anexia.com,Selective,Preferred,False,Not Required
+64,42541,1,0,1,Fiberby,12498,100-200Gbps,Mostly Inbound,Regional,Cable/DSL/ISP,500,2000,True,False,True,10,4,,Open,Not Required,False,Not Required
+65,44407,1,0,1,Linkt,32982,100-200Gbps,Mostly Inbound,Europe,Network Services,125,20,True,False,True,2,15,http://as44407.net,Open,Not Required,False,Not Required
+66,46478,1,0,1,,,,,,,,,,,,,,,,,,
+67,47217,1,0,1,Planetel,16329,50-100Gbps,Mostly Inbound,Global,Cable/DSL/ISP,250,50,True,False,True,2,2,,Open,Not Required,False,Not Required
+68,48813,1,1,0,Enix,20209,5-10Gbps,Balanced,Europe,NSP,10,10,True,False,True,0,3,,Open,Not Required,False,Not Required
+69,49544,2,1,1,i3D.net,9441,5-10Tbps,Balanced,Global,NSP,500,200,True,False,True,99,61,https://www.i3d.net/noc/peering/,Selective,Preferred,False,Not Required
+70,52234,56,24,0,,,,,,,,,,,,,,,,,,
+71,52280,8,1,2,InterNexa Chile,14948,,Not Disclosed,Regional,NSP,7000,200,True,False,True,0,4,,Selective,Not Required,False,Not Required
+72,52304,112,25,0,,,,,,,,,,,,,,,,,,
+73,52320,1,0,1,Vtal 52320,3168,1-5Tbps,Mostly Inbound,South America,NSP,35000,10000,True,False,True,17,16,,Selective,Preferred,False,Required
+74,52341,3,0,1,WOM,21088,,Not Disclosed,South America,Cable/DSL/ISP,200,100,True,False,True,1,2,,Selective,Not Required,False,Required
+75,52368,7,1,3,,,,,,,,,,,,,,,,,,
+76,52468,2,1,1,Ufinet Latam AS52468,17378,500-1000Gbps,Mostly Inbound,Regional,NSP,12000,12000,True,False,True,18,38,,Open,Preferred,False,Not Required
+77,52511,1,1,0,Hostednode,37735,5-10Gbps,Heavy Outbound,South America,Content,15,30,True,False,True,0,2,,Open,Not Required,False,Not Required
+78,57793,1,0,1,1310.io,33173,,Not Disclosed,Europe,,0,0,False,False,False,3,3,,Open,Not Required,False,Not Required
+79,60068,2,1,1,CDN77,19169,50-100Tbps,Mostly Outbound,Global,Content,6000,2000,True,False,True,50,86,,Open,Not Required,False,Not Required
+80,61138,12,0,4,Zappie Host,11952,10-20Gbps,Mostly Outbound,Global,NSP,100,100,True,False,True,6,2,https://zappiehost.com/bgp-peering-with-cloud-vps,Open,Not Required,False,Not Required
+81,61460,1,1,0,,,,,,,,,,,,,,,,,,
+82,61506,6,0,5,Insacom y Cia. Limitada,15156,,Not Disclosed,Not Disclosed,,7,10,True,False,False,1,1,,Open,Not Required,False,Not Required
+83,62336,1,0,1,PURtel.com,10058,200-300Gbps,Mostly Inbound,Europe,NSP,50,10,True,False,True,5,7,,Open,Not Required,False,Not Required
+84,64108,1,1,0,,,,,,,,,,,,,,,,,,
+85,64112,18,3,7,PIT Chile - Transit,14704,1-5Gbps,Not Disclosed,Not Disclosed,,0,0,True,False,True,4,0,,Open,Not Required,False,Not Required
+86,64139,1,1,0,GRUPO METROWAN TELECOM,32838,100-200Gbps,Not Disclosed,South America,Cable/DSL/ISP,40,40,True,False,True,2,8,,Open,Not Required,False,Not Required
+87,64152,23,6,2,,,,,,,,,,,,,,,,,,
+88,64155,1,1,0,,,,,,,,,,,,,,,,,,
+89,201701,1,0,1,Freifunk Rheinland e.V.,10122,5-10Gbps,Balanced,Europe,Non-Profit,15,15,True,False,True,8,4,http://www.ffrl.de/,Open,Preferred,False,Not Required
+90,201838,1,0,1,Community Fibre,14893,,Heavy Inbound,Regional,Cable/DSL/ISP,150,10,True,False,True,4,3,,Open,Not Required,False,Not Required
+91,207146,2,1,1,Netikom,23542,5-10Gbps,Mostly Inbound,Regional,Cable/DSL/ISP,10,10,True,False,True,1,2,,Selective,Not Required,False,Not Required
+92,262213,2,1,0,Cable Color Chile,17407,20-50Gbps,Mostly Inbound,South America,Cable/DSL/ISP,50,10,True,False,True,1,0,,Open,Not Required,False,Not Required
+93,262237,9,2,5,Orbyta,16553,1-5Gbps,Balanced,Global,Enterprise,0,0,True,False,True,1,0,http://www.orbyta.cl/peering/,Open,Preferred,False,Not Required
+94,262589,17,6,3,InterNexa Global Network,14266,1-5Tbps,Mostly Inbound,Global,NSP,25000,5000,True,True,True,10,21,,Selective,Not Required,True,Not Required
+95,263237,61,7,4,PowerHost Chile,15728,5-10Tbps,,Global,,6000,2000,True,True,True,10,27,,Open,Not Required,False,Not Required
+96,263702,1,1,0,Grupo ZGH,16266,500-1000Gbps,,South America,Content,1000,500,True,False,True,1,6,,Open,Not Required,False,Not Required
+97,263728,2,0,2,Wimux,18289,100-1000Mbps,Not Disclosed,South America,Cable/DSL/ISP,5,1,True,False,True,0,0,,Selective,Not Required,False,Required
+98,263773,1,1,0,,,,,,,,,,,,,,,,,,
+99,263784,13,1,6,Bynarya SpA,14412,,Not Disclosed,Not Disclosed,,0,0,False,False,False,3,0,,Open,Not Required,False,Not Required
+100,264780,2,2,0,HomeNet,21069,,Balanced,South America,Cable/DSL/ISP,56,4,True,False,True,0,1,,Open,Not Required,False,Not Required
+101,264814,8,1,6,Bitred,21578,50-100Gbps,Heavy Inbound,South America,Cable/DSL/ISP,20,15,True,False,True,1,2,,Open,Not Required,False,Not Required
+102,265662,2,1,0,TLINK SpA,17247,50-100Gbps,Not Disclosed,South America,Cable/DSL/ISP,70,70,True,False,True,1,5,,Open,Not Required,False,Not Required
+103,265703,1,1,0,AUSTRO INTERNET,17867,5-10Gbps,Balanced,South America,Cable/DSL/ISP,20,20,True,False,True,1,0,,Open,Not Required,False,Not Required
+104,266711,1,1,0,,,,,,,,,,,,,,,,,,
+105,266779,1,1,0,ANMAX Telecom,21204,5-10Gbps,Heavy Inbound,South America,Cable/DSL/ISP,1,1000,True,False,False,0,1,,Open,Preferred,False,Not Required
+106,266818,1,1,0,RODRIGUEZ Y HERRERA ISP,20292,,Not Disclosed,Not Disclosed,,5,1,True,False,True,1,0,,Open,Not Required,False,Not Required
+107,266830,1,1,0,AP Telecom,23245,20-50Gbps,Mostly Inbound,Not Disclosed,Cable/DSL/ISP,100,20,True,False,True,3,5,,Open,Not Required,False,Not Required
+108,266840,1,1,0,CMP WILL TELECOMUNICACIONES,20613,100-1000Mbps,Mostly Outbound,Not Disclosed,Cable/DSL/ISP,4,1,True,True,True,1,0,,Open,Not Required,False,Not Required
+109,266844,1,1,0,MELSAT TELECOMUNICACIONES,20442,5-10Gbps,,South America,Cable/DSL/ISP,4,32,True,False,True,1,0,,Open,Not Required,False,Not Required
+110,266852,1,1,0,SOCIEDAD PIRQUE NET,20791,1-5Gbps,Balanced,South America,Cable/DSL/ISP,4,4,True,False,True,0,0,http://www.pirque.net/,Open,Not Required,False,Not Required
+111,266857,1,1,0,SERVICIOS DE TELECOMUNICACIONES FULLTV,20792,5-10Gbps,Balanced,South America,Cable/DSL/ISP,4,4,True,False,True,1,0,http://fulltv.cl/,Open,Not Required,False,Not Required
+112,266902,1,1,0,,,,,,,,,,,,,,,,,,
+113,267745,1,1,0,TELECOMUNICACIONES WIFIRED,21798,,Not Disclosed,Not Disclosed,Network Services,24,32,True,False,True,1,0,,Open,Not Required,False,Not Required
+114,267776,2,2,0,OPTIWISP,32670,20-50Gbps,Mostly Inbound,Regional,Cable/DSL/ISP,8,1,True,False,True,0,4,,Selective,Not Required,False,Required
+115,269733,1,1,0,,,,,,,,,,,,,,,,,,
+116,269956,8,1,6,HABLA IP,25339,100-1000Mbps,Balanced,South America,NSP,10,5,True,False,True,1,3,https://www.hablaip.com/peering,Open,Preferred,False,Not Required
+117,269988,12,0,9,Binet Networking Data Limitada,39261,10-20Gbps,Balanced,Regional,Cable/DSL/ISP,4,1000,True,False,True,0,1,,Open,Not Required,False,Not Required
+118,270024,4,1,3,ICONEX,26385,5-10Gbps,Balanced,South America,Cable/DSL/ISP,4,1,True,False,True,1,1,,Open,Not Required,False,Not Required
+119,271869,1,1,0,SERVICIOS ZONALES DE INTERNET,29867,20-50Gbps,Not Disclosed,South America,Cable/DSL/ISP,10,10,True,False,True,1,1,,Open,Not Required,False,Not Required
+120,271896,21,0,8,HENRIQUEZ TELECOMUNICACIONES LIMITADA (WILCOM),35179,,Not Disclosed,Not Disclosed,,0,0,False,False,False,0,0,,Open,Not Required,False,Not Required
+121,272014,1,1,0,,,,,,,,,,,,,,,,,,
+122,273148,6,0,3,SMARTNET CHILE,40923,,Not Disclosed,Not Disclosed,,0,0,False,False,False,0,0,,Open,Not Required,False,Not Required
+123,273973,7,2,4,Apoapsis,39658,,Not Disclosed,Not Disclosed,,0,0,False,False,False,1,0,,Open,Not Required,False,Not Required
+124,395611,1,0,1,MBIX Services,11335,0-20Mbps,Balanced,North America,Non-Profit,10,10,True,False,True,1,1,http://www.mbix.ca/about/,Open,Not Required,False,Not Required
+125,397032,1,0,1,SPARKED,41382,20-50Gbps,Mostly Outbound,Global,NSP,800,800,True,False,True,1,13,https://sparkedhost.com/contact,Open,Not Required,False,Not Required
+126,399242,1,0,1,CodingFlyBoy,28357,0-20Mbps,Balanced,Regional,Educational/Research,1,1,True,False,True,1,1,,Open,Not Required,False,Not Required

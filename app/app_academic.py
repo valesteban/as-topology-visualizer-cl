@@ -22,6 +22,7 @@ sys.path.append(str(ROOT_DIR))
 # Imports
 # ==================================================
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 
 from src.load_csv_graph import load_graph_from_csv
@@ -45,6 +46,9 @@ from src.visualizations import (
     plot_top_k_comparison,
     plot_venn_diagram_asn_overlap,
     plot_venn_diagram_plotly,
+    build_pyvis_network,
+    plot_k_core_profile,
+    plot_neighbor_degree_correlation,
     COLORS
 )
 from src.interpretations import get_academic_context
@@ -376,6 +380,40 @@ if analysis_mode == "🔬 Comparativo Completo":
             import traceback
             st.code(traceback.format_exc())
 
+    # ============================================
+    # SECTION 2.1: PyVis Topology View
+    # ============================================
+    st.markdown('<div class="section-header">🕸️ 2.1 Visualización Topológica (PyVis)</div>', unsafe_allow_html=True)
+
+    st.markdown(
+        """
+        Visualización interactiva para explorar la interconexión de ASNs con un layout de red dinámico.
+        """
+    )
+
+    pyvis_graph = st.selectbox(
+        "Selecciona el grafo a visualizar:",
+        list(graphs.keys()),
+        key="pyvis_graph_selector",
+    )
+
+    col1, col2 = st.columns(2)
+    with col1:
+        max_nodes = st.slider("Nodos máximos", 50, 600, 250, step=50)
+    with col2:
+        max_edges = st.slider("Aristas máximas", 200, 5000, 1500, step=200)
+
+    pyvis_html = build_pyvis_network(
+        graphs[pyvis_graph],
+        node_metadata=metadatas.get(pyvis_graph, {}),
+        title=f"Topología {pyvis_graph}",
+        max_nodes=max_nodes,
+        max_edges=max_edges,
+    )
+    components.html(pyvis_html, height=700, scrolling=True)
+
+    st.info("Tip: aumenta el número de nodos para ver más conexiones o disminúyelo para mayor claridad.")
+
     # Un Jaccard Index bajo es esperado y refleja la complementariedad de ambas fuentes.
     # ============================================
     # SECTION 3: Degree Distribution Analysis
@@ -408,6 +446,26 @@ if analysis_mode == "🔬 Comparativo Completo":
                 dist_stats = analyze_degree_distribution(g)
                 for key, value in dist_stats.items():
                     st.markdown(f"- **{key}**: {value}")
+
+    # ============================================
+    # SECTION 3.1: Interconexión Chile (nuevos gráficos)
+    # ============================================
+    st.markdown('<div class="section-header">🧭 3.1 Interconexión de Chile</div>', unsafe_allow_html=True)
+
+    inter_graph = st.selectbox(
+        "Selecciona grafo para interconexión:",
+        list(graphs.keys()),
+        key="interconnect_graph_selector",
+    )
+
+    col1, col2 = st.columns(2)
+    with col1:
+        fig_core = plot_k_core_profile(graphs[inter_graph])
+        st.plotly_chart(fig_core, use_container_width=True)
+
+    with col2:
+        fig_neighbor = plot_neighbor_degree_correlation(graphs[inter_graph])
+        st.plotly_chart(fig_neighbor, use_container_width=True)
     
     # ============================================
     # SECTION 4: In-Degree vs Out-Degree
