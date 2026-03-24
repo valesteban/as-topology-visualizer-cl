@@ -48,13 +48,51 @@ git clone https://github.com/valesteban/as-topology-visualizer-cl.git
 cd as-topology-visualizer-cl
 
 # Crear entorno virtual
-python3 -m venv venv
-source venv/bin/activate
+python -m venv .venv
+```
+
+### Linux / macOS
+
+```bash
+# Activar con script helper
+source activate.sh
+
+# O activar manualmente
+source .venv/bin/activate
 
 # Instalar dependencias
 pip install -r requirements.txt
+```
 
-# Verificar instalación
+### Windows (PowerShell)
+
+```powershell
+# Activar con script helper
+.\activate.ps1
+
+# O activar manualmente
+.\.venv\Scripts\Activate.ps1
+
+# Instalar dependencias
+pip install -r requirements.txt
+```
+
+### Windows (CMD)
+
+```bat
+:: Activar con script helper
+activate.bat
+
+:: O activar manualmente
+.venv\Scripts\activate.bat
+
+:: Instalar dependencias
+pip install -r requirements.txt
+```
+
+### Verificar instalación
+
+```bash
 python test_environment.py
 ```
 
